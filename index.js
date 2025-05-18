@@ -22,6 +22,10 @@ app.use(cors({
 // Routes
 app.use("/product",productRouter)
 
+app.get('/', (req, res) => {
+  res.send('Backend is running successfully!');
+});
+
 app.use((req, res, next) => {
     const error = new Error("Route not found");
     error.status = 404;
